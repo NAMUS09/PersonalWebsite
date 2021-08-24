@@ -1,0 +1,1203 @@
+/* import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align:none;
+    user-select: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 0px;
+}
+/* all simlar styling */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1520px;
+    padding: 0 40px;
+    margin: auto;
+}
+.footer{
+    font-family: 'Poppins', sans-serif;
+}
+.home, .myproject, .about .about-content, .contact{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: fit-content;
+    justify-content: space-between;
+    font-family: 'Ubuntu', sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* navbar styling */
+.navbar{
+    position: fixed;
+    color: white;
+    margin: 0;
+    margin-left: -3%;
+    width: 100%;
+    height: 15%;
+    padding: 0px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+.navbar.sticky .top{
+    padding: 0px 0;
+    background: black;
+}
+.navbar .split{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+}
+.navbar .top{
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+}
+.navbar .logo{
+    margin-top: 10px;
+    position: absolute;
+    margin-left: 5%;
+}
+.navbar .top .logo a{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+}
+.navbar.sticky .top .logo a{
+    font-size: 20px;
+}
+.navbar .top .logo a span{
+    color: crimson;
+    transition: all 0.3s ease;
+}
+.navbar .top .menu{
+    margin-top: 17px;
+    margin-right: 3%;                    
+    float: right;
+    list-style: none;
+    position: relative;
+}
+.navbar .top .menu li{
+    display: inline-block;
+    position: relative;
+}
+.navbar .top .menu li::after{
+    content:'';
+    height: 3px;
+    width: 0;
+    background: crimson;
+    position: absolute;
+    left: 15%;
+    bottom: -5px;
+    transition: 0.5s;
+}
+.navbar .top .menu li:hover:after{
+    width : 90%;
+}
+.navbar .top .menu li.active::after{
+    width: 90%;
+}
+.navbar .top .menu li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .top .menu li a:hover{
+    color: crimson;
+}
+.navbar .top .menu li a.active{
+    color: crimson;
+}
+.navbar .top .menu li a span{
+    margin-left: 5px;
+}
+.navbar .bottom{
+    top: 50%;
+    height: 25%;
+}
+.navbar .bottom .menu-1{
+    display: none;
+    text-align: center;
+    font-size: 20px;
+}
+/* hide alert for desktop */
+.alert{
+    display: none;
+}
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+/* home button styling */
+.home{
+    background: url(../image/home.jpg) no-repeat center;
+    height: 100vh;
+    color: #fff;
+}
+.home .max-width{
+    width: 100%;
+}
+.home-content{
+    margin-left: 50px;
+}
+.home .home-content .greet{
+    margin-top: 50px;
+    font-size: 30px;
+}
+.home .home-content .name{
+    font-size: 80px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-left: -3px;
+}
+.home .home-content .name1{
+    font-size: 40px;
+    margin: 20px 0;
+}
+.home .home-content .name1 span{
+    color: crimson;
+    font-size: 60px;
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: linear-gradient(to right, black 50%, crimson 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 500;
+    border-radius: 80px;
+    border: 2px solid crimson;
+    transition: all 0.5s ease-out;
+}
+.home .home-content a:hover{
+    background-position: left bottom;
+    color: crimson;
+}
+/* my project styling */
+.project{
+    color:#fff;
+    background:#91a898e7;
+    min-height: 780px;
+}
+.project .max-width{
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.project .carousel .card{
+    width: 1150px;
+    height:600px;
+    background: #222;
+    border-radius: 15px;
+    padding: 25px 35px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+.project .carousel .card:hover{
+    background: crimson;
+}
+.project .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+.project .carousel .card .box h1{
+    padding-top: 15px;
+    color: crimson;
+    font-size: 35px;
+    transition: all .3s ease ;
+}
+.project .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+.project .carousel .card:hover h1{
+    color: white;
+    padding-left: 30px;
+    font-size: 40px;
+}
+/* split the box */
+.project .carousel .box .split{
+    width: 50%;
+    position: absolute;
+}
+/* left side image */
+.project .carousel .box .left{
+    left: 0;
+}
+.project .carousel .box .left img{
+    margin-top: 15%;
+    margin-left: 5%;
+    height: 390px;
+    width: 500px;
+    object-fit:fill;
+    border-radius: 15px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.project .carousel .card:hover img{
+    border-color: #fff;
+}
+/* right side information */
+.project .carousel .box .right{
+    right: 0;
+}
+.project .carousel .box .right h1{
+    margin-top: 10%;
+    margin-left: 12%;
+}
+.project .carousel .box .right .text{
+    list-style: none;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+.project .carousel .box .right .text li{
+    margin-top: 10px;
+}
+.project .box .right .text span{
+    color: crimson;
+    font-size: 25px;
+    padding-right: 20px;
+    transition: all .3s ease;
+}
+.project .card:hover .text span{
+    color: black;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 10px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid crimson!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: crimson!important;
+}
+/* about section styling */
+.about{
+    background:#738081e7;
+    height: 100vh;
+    color: #fff;
+    font-size: 13px;
+}
+/* Split the screen in half */
+.about .split {
+    height: 94%;
+    width: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 90px;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+/* left section */
+.about .left{
+    left: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+.about .left .about-content img{
+    margin-left: 30%;
+    margin-top: 8px;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border: 7px solid blue;
+    border-radius: 1000px;
+}
+.about .left .title{
+    margin-top: 2%;
+    margin-left: 33%;
+    font-family: 'Rubik', sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+}
+.about .left .line{
+    margin-left: 35px;
+    margin-right: 0px;
+    margin-top: 10px;
+    height: 2px;
+    width: 100%;
+    background: crimson;
+    position: relative;
+}
+.about .left .info{
+    float: left;
+    margin-left: 46px;
+}
+.about .left .info h1{
+    padding-top: 17px;
+}
+.about .left .info span{
+    color: black;
+}
+.about .left .info-1 h1{
+    padding-top: 17px;
+}
+.about .left .info-1 span{
+    color: black;
+}
+.about .left a{
+    display: inline-block;
+    background: linear-gradient(to right, #738081e7 50%, crimson 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 20px;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-weight: 400;
+    border-radius: 100px;
+    border: 2px solid crimson;
+    transition: all 0.5s ease-out;
+}
+.about a:hover{
+    background-position: left bottom;
+    border: 2px solid black;
+    color: black;
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 45px;
+}
+/* skills section right in about section */
+.about .right{
+    right: 0;
+    font-family: 'Rubik', sans-serif;
+}
+.about .right .title{
+    margin-left: 40%;
+    margin-top: 15px;
+    color: yellow;
+    font-size: 35px;
+    font-weight: 500;
+}
+.about .right .line-r{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    height: 2px;
+    background: crimson;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.about .right .bars{
+    margin-left: 15%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 15%;
+}
+.about .right .info{
+    display:flex;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content:space-between;
+    margin-bottom: 7px;
+}
+.about .right .info span{
+    font-size: 17px;
+}
+.about .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgray;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+.about .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(42, 241, 42);
+    transition: all .3s ease;
+}
+.about .right .line:hover{
+    height: 20px;
+}
+.about .right .line:hover:before{
+    width: 0%;
+    transition: all .5s ease;
+}
+.about .right .python::before{
+    width: 30%;
+}
+.about .right .javascript::before{
+    width: 10%;
+}
+.about .right .html::before{
+    width: 60%;
+}
+.about .right .css::before{
+    width: 40%;
+}
+.about .right .photoshop::before{
+    width: 30%;
+}
+/* contact section start */
+.contact{
+    background:#738685dc;
+    height: 100vh;
+    color: #fff;
+    font-size: 13px;
+}
+/* slpit into two */
+.contact .column{
+    height: 94%;
+    width: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 90px;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+/* left side content */
+.contact .left{
+    left: 0;
+    margin-left: 50px;
+}
+.contact .left h1{
+    font-size: 40px;
+    margin-top: 6%;
+    padding-left: 35px;
+    margin-left: -15px;
+}
+.contact .left p{
+    margin-right: 15%;
+    padding: 20px;
+    font-size: 20px;
+    text-align: justify;
+}
+.contact .left .icons{
+    margin: 10px 0;
+}
+.contact .row{
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+.contact .row .info{
+    margin-left: 30px;
+}
+.contact .row i{
+    font-size: 40px;
+    color: crimson;
+    margin-left: 40px;
+}
+.contact .info .head{
+    font-size: 20px;
+    font-weight: 500;
+}
+.contact .info .sub-title{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+.contact .left .icons .social {
+    margin-top: 20px;
+    padding-left: 80px;
+}
+.contact .left .icons .social .fab{
+    padding: 7px;
+    font-size: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 30px;
+    text-decoration: none;
+}
+.contact .left .icons .social .fab:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+} 
+.fa-instagram {
+    background:rgb(214, 41, 76);
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+/* right side content */
+.contact .right{
+    right: 0;
+}
+.contact .right .text{
+    margin-top: 10%;
+    margin-left: 10%;
+    color: crimson;
+    font-size: 30px;
+    font-weight: 500;
+}
+.contact .right form{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.contact .right form .fields{
+    display: flex;  
+    margin-right: 0;
+}
+.contact .right form .fields .name{
+    width: 70%;
+}
+.contact .right form .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    text-align: center;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+.contact .right form .textarea textarea{
+  padding-top: 10px;
+  resize: none;
+}
+.contact .right form .button-area{
+  display: flex;
+  margin-top: 5%;
+  align-items: center;
+}
+.right form .button-area button{
+  color: #fff;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: crimson;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+.right form .button-area button:hover{
+  color: black;
+  font-weight: 300;
+  background: none;
+}
+.right #process{
+    font-size: 16px;
+    margin-top: -4%;
+    margin-left: 33%;
+    color: cyan;
+}
+.right #status{
+    width: 40%;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+    margin-left: 10%;
+    border-radius: 30px;
+}
+.right #status.success{
+    background: rgb(105, 238, 105);
+    color: white;
+    animation: status 4s ease forwards;
+}
+.right #status.error{
+    background: red;
+    color: white;
+    animation: status 4s ease forwards;
+}
+
+/* footer section styling */
+footer{
+    background: black;
+    text-align: center;
+    padding: 15px 23px;
+    color: #fff;
+}
+footer span a{
+    color: crimson;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+/* responsive media query start */
+@media (max-width: 1410px){
+    .about .left{
+        font-size: 12px;
+    }
+    .about .left .about-content img{
+        margin-top: 2%;
+        margin-left: 37%;
+        height: 200px;
+        width: 200px;
+        border: 5px solid blue;
+    }
+    .about .left .title{
+        margin-left: 40%;
+        font-size: 32px;
+        font-weight: 500;
+    }
+    .about .left .line{
+        margin-top: 5px;
+        height: 3px;
+        margin-left: 15px;
+        width: 95%;
+    }
+    .about .left .info{
+        margin-left: 35px;
+    }
+    .about .left .info h1{
+        padding-top: 20px;
+    }
+    .about .left .info span{
+        color: black;
+    }
+    .about .left .info-1 h1{
+        padding-top: 20px;
+    }
+    .about .left .info-1 span{
+        color: black;
+    }
+    .about .left a{
+        font-size: 23px;
+        padding: 10px 10px;
+        margin-top: 20px;
+        margin-left: 5px;
+    }
+}
+@media (max-width: 1250px){
+    .about .left a{
+        font-size: 20px;
+        padding: 10px 10px;
+        margin-top: 20px;
+        margin-left: 5px;
+    }  
+}
+@media (max-width: 1200px){
+    .about .left{
+        font-size: 10px;
+    }
+}
+@media (max-width: 1200px){
+    .about .left a{
+        font-size: 15px;
+    }
+}
+@media (max-width: 500px){
+    /* menu button for mobile devices */
+    .navbar{
+        margin-left: -11%;
+    }
+    .navbar.sticky{
+        padding: 0;
+    }
+    .navbar .top .menu-btn{
+        display: block;
+        float: right;
+        font-size: 25px;
+        color: crimson;
+        margin-top: 3%;
+        margin-right: 7%;
+    }
+    .navbar .top .menu-btn i.active:before{
+        content: "\f00d";
+        color: crimson;
+    }
+    .navbar .top .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -105%;
+        top: 5%;
+        background: #222;
+        text-align: center;
+        padding-top: 50px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        z-index: 999;
+        left: 0;
+    }
+    .navbar .top .logo{
+        margin-top: 10px;
+    }
+    .navbar .top .logo a{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .navbar.sticky .top .logo a{
+        font-size: 12px;
+    }
+    .navbar .top .logo a span{
+        color: crimson;
+        transition: all 0.3s ease;
+    }
+    .navbar .top .menu li{
+        display:block;
+    }
+    .navbar .top .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .navbar .top .menu li::after{
+        display: none;
+    }
+    .navbar.sticky .bottom{
+        background: #b3b3b3;
+    }
+    .navbar .bottom .menu-1{
+        display: block;
+        color: crimson;
+        font-weight: 700;
+        margin-left: -2%;    
+    }
+    .navbar .bottom .menu-1::after{
+        content:'';
+        height: 2px;
+        width: 100%;
+        background: rgb(234, 238, 14);
+        position:absolute;
+        left: 0;
+        bottom: 0px;
+    }
+    /* alert for mobile devices */
+    .alert {
+        display: block;
+        font-size: 13px;
+        position: absolute;
+        background-color: #f44336;
+        color: white;
+        margin-top: -15%;
+        margin-left: -6%;
+        margin-right: -8%;
+        padding: 5px;
+        border-radius: 6px;
+    }
+    /* close button */
+    .closebtn {
+        margin-right: 0px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .closebtn:hover {
+        color: black;
+    } 
+    /* home */
+    .home{
+        background: black;
+    }
+    .home .max-width{
+        width: 95%;
+        height: 100%;
+    }
+    .home-content{
+        margin-left: 5px;
+    }
+    .home .home-content .greet{
+        margin-top: 30%;
+        font-size: 20px;
+    }
+    .home .home-content .name{
+        font-size: 50px;
+    }
+    .home .home-content .name1{
+        font-size: 25px;
+    }
+    .home .home-content .name1 li{
+        text-decoration: none;
+    }
+    .home .home-content .name1 span{
+        font-size: 24px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+        width: auto;
+        padding: 10px;
+    }
+    /* my project section  */
+    .project{
+        font-size: 12px;
+    }
+    .project .max-width{
+        min-height: 450px;
+        margin-top: 10%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: 0;
+        padding: 15px;
+    }
+    .project .carousel .card{
+        width: 320px;
+        height: 400px;
+    }
+    .project .carousel .card .box h1{
+        padding-top: 0px;
+        font-size: 15px;
+    }
+    .project .carousel .card:hover h1{
+        padding-left: 10px;
+        font-size: 15px;
+    }
+    .project .carousel .card:hover .box{
+        transform: none;
+    }
+    /* split the box */
+    .project .carousel .box .split{
+       width: 100%;
+       height: 50%;
+       position: absolute;
+    }
+    /* up side */
+    .project .carousel .box .left{
+        left: 0;
+        height: 45%;
+        bottom: 50%;
+    }
+    .project .carousel .box .left img{
+        margin-top: 9%;
+        margin-left: 10%;
+        height: 170px;
+        width: 250px;
+        object-fit:fill;
+        border-radius: 15px;
+        border: 2px solid crimson;
+        transition: all 0.3s ease;
+    }
+    /* downside */
+    .project .carousel .box .right{
+        height: 45%;
+        top: 50%;
+    }
+    .project .carousel .box .right h1{
+        margin-top: 12%;
+        margin-left: 12%;
+    }
+    .project .carousel .box .right .text{
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 1%;
+        margin-left: 15%;
+        margin-right: 5px;
+    }
+    .project .carousel .box .right .text span{
+        font-size: 10px;
+        margin-top: 1%;
+        margin-left: 0;
+    }
+    .project .carousel .box .right .text li{
+        margin-top: 4px;
+    }
+    /* about section */
+    .about .split {
+        position: absolute;
+        height: 55%;
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 22%;
+    }
+    /* about up */
+    .about .left{
+        position: absolute;
+        top:0;
+        left: 0;
+        height: 45%;
+        right: 0;
+        bottom: 55%;
+    }
+    .about .left .about-content img{
+        margin-top: 10%;
+        margin-left: 37%;
+        height: 70px;
+        width: 70px;
+        border: 3px solid blue;
+    }
+    .about .left .title{
+        margin-left: 38%;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .about .left .line{
+        margin-top: 5px;
+        height: 2px;
+        margin-left: 15px;
+        width: 91%;
+    }
+    .about .left .info{
+        margin-left: 16px;
+    }
+    .about .left .info h1{
+        font-size: 10px;
+        padding-top: 7px;
+    }
+    .about .left .info span{
+        color: black;
+    }
+    .about .left .info-1 h1{
+        font-size: 10px;
+        padding-top: 7px;
+    }
+    .about .left .info-1 span{
+        color: black;
+    }
+    .about .left a{
+        font-size: 10px;
+        padding: 5px 5px;
+        margin-top: 15px;
+        margin-left: 5px;
+        transition: none;
+    }
+    .about a:hover{
+        color:white;
+        background-position: right bottom;
+        background:crimson;
+        border: 2px solid crimson;
+    }
+    /* about down  */
+    .about .right{
+        position: absolute;
+        height: 47%;
+        top: 57%;
+        margin-top: 0;
+    }
+    .about .right .title{
+        margin-left: 40%;
+        margin-top: 0px;
+        font-size: 15px;
+    }
+    .about .right .line-r{
+        margin-left: 5%;
+        margin-right: 5%;
+        height: 2px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .about .right .bars{
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 7px;
+        margin-bottom: 1px;
+    }
+    .about .right .info{
+        margin-bottom: 3px;
+    }
+    .about .right .info span{
+        font-size: 10px;
+    }
+    .about .right .line{
+        height: 3px;
+    }
+    .about .right .line:hover{
+        height: 5px;
+    }
+    /* contact section  */
+    /* split */
+    .contact .max-width{
+        width: 100%;
+        height: 100%;
+    }
+    .contact .column {
+        position: absolute;
+        height: 50%;
+        width: 100%;
+        margin-top: 25%;
+        padding-top: 0;
+        margin-left: 0px;
+    }
+    /* top section */
+    .contact .left{
+        position:absolute;
+        top:0;
+        height: 44%;
+        bottom: 55%;
+    }
+    .contact .left h1{
+        font-size: 17px;
+        padding-left: 0;
+        margin-top: 4%;
+        margin-left: 10%;
+    }
+    .contact .left p{
+        margin-right: 7%;
+        margin-left: 10%;
+        padding: 0px;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: justify;
+    }
+    .contact .left .icons{
+        margin: 10px 0;
+    }
+    .contact .row{
+        height: 32px;
+        align-items: center;
+    }
+    .contact .row .info{
+        margin-left: 30px;
+    }
+    .contact .row i{
+        font-size: 23px;
+        color: crimson;
+        margin-left: 40px;
+    }
+    .contact .info .head{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .contact .info .sub-title{
+        font-size: 12px;
+        font-weight: 700;
+        color: #333;
+    }
+    .contact .left .icons .social {
+        margin-top: 10px;
+        padding-right: 30px;
+    }
+    .contact .left .icons .social .fab{
+        padding: 7px;
+        font-size: 25px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    /* down */
+    .contact .right{
+        position: absolute;
+        height: 47%;
+        top: 55%;
+        margin-top: 0;
+    }
+    .contact .right .text{
+        margin-top: 5px;
+        text-align: center;
+        margin-left: 0px;
+        font-size: 25px;
+    }
+    .contact .right form{
+        position: absolute;
+        font-size: 5px;
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .contact .right form .fields .name{
+        width: 44%;
+    }
+    .contact .right form .fields .email{
+        width: 80%;
+    }
+    .contact .right form .field{
+        height: 30px;
+        margin-bottom: 7px;
+    }
+    .contact .right form .textarea{
+        height: 50px;
+    }
+    .contact .right form .name{
+        margin-right: 4px;
+    }
+    .contact .right form .field input, .contact .right form .textarea textarea{
+        font-size: 9.5px;
+        padding: 10px;
+    }
+    .contact .right form .button-area{
+        display: flex;
+        align-items: center;
+    }
+    .right form .button-area button{
+        width: 90px!important;
+        height: 30px;
+        padding: 2px;
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .right form .button-area button:hover{
+        color: white;
+        background: crimson;
+    }
+    .right #process{
+        display:block;
+        margin-left: 39%;
+        margin-top: 45%;
+    }
+    .right #status{
+        width: 50%;
+        font-size: 10px;
+        text-align: center;
+        padding: 5px;
+        margin-top: 55%;
+        margin-left: 10%;
+        border-radius: 30px;
+    }
+    /* footer section */
+    footer{
+        background: black;
+        font-size: 9px;
+        text-align: center;
+        padding: 5px 10px;
+    } 
+}
